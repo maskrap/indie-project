@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
   root to: 'businesses#index'
-  resources :businesses
+  resources :businesses do
+    resources :requests
+  end
 end

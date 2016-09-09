@@ -1,10 +1,33 @@
 <h1><%= @business.biz_name %></h1>
 
+
 <h3><%= @business.biz_type %></h3>
 <h3><%= @business.biz_address %></h3>
 <h3><%= @business.biz_phone %></h3>
 <h3><%= @business.biz_contact %></h3>
 <h3><%= @business.biz_number %></h3>
+
+<%= link_to "Make request", new_business_request_path(@business) %>
+
+<% if @business.requests.any? %>
+  <h4>Requests made:</h4>
+
+  <ul>
+    <% @business.requests.each do |request| %>
+      <li>
+        <%= request.interval %>
+        <%= link_to "Edit", edit_business_request_path(@business, request) %> |
+        <%= link_to "Delete", business_request_path(@business, request), :data => {:confirm => "You sure?", :method => "delete"} %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>
+    There are no requests
+  </p>
+<% end %>
+
+<hr>
 
 <p>
   <%= link_to "Edit", edit_business_path(@business) %>
