@@ -1,12 +1,14 @@
 class RequestsController < ApplicationController
   def new
     @business = Business.find(params[:business_id])
-    @request = @business.request.new
+    @request = @business.requests.new
+
   end
 
   def show
     @businesses = Business.all
     @requests = Request.all
+  end
 
   def create
     @business = Business.find(params[:business_id])
@@ -42,6 +44,4 @@ class RequestsController < ApplicationController
     def request_params
       params.require(:request).permit(:interval, :date)
     end
-  end
-
 end
