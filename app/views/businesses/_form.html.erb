@@ -1,0 +1,23 @@
+<%= render 'layouts/errors', :object => @business %>
+
+<%= form_for @business do |f| %>
+  <%= f.label :Name %>
+  <%= f.text_field :biz_name %>
+
+  <%= f.label :Type %>
+  <%= f.text_field :biz_type %>
+
+  <%= f.label :Street %>
+  <%= f.text_field :biz_address %>
+
+  <%= f.label :Phone %>
+  <%= f.text_field :biz_phone %>
+
+  <%= f.label :Contact %>
+  <%= f.text_field :biz_contact %>
+
+  <%= f.label :"Business number" %>
+  <%= f.text_field :biz_number %>
+
+  <%= f.submit %>
+<% end %>
