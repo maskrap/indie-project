@@ -1,8 +1,8 @@
 <%= render 'layouts/errors', :object => @request %>
 
 <%= form_for [@business, @request] do |f| %>
-  <%= f.label :Notes %>
-  <%= f.text_field :interval %>
+  <%= f.label :interval %>
+  <%= f.text_field :interval, "Notes" %>
   <%= f.label :date %>
   <%= f.datetime_select :date %>
   <p>

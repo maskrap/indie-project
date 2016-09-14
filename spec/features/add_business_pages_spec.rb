@@ -4,12 +4,12 @@ describe "the add a business process" do
   it "Adds a new business" do
     visit businesses_path
     click_link 'Add a new business'
-    fill_in 'Name', :with => 'Test Name'
-    fill_in 'Type', :with => 'Test Type'
-    fill_in 'Street', :with => 'Test Street'
-    fill_in 'Phone', :with => 'Test Phone'
-    fill_in 'Contact', :with => 'Test Contact'
-    fill_in 'Business Number', :with => 'Test Business Number'
+    fill_in 'biz_name', :with => 'Test Name'
+    fill_in 'biz_type', :with => 'Test Type'
+    fill_in 'biz_address', :with => 'Test Street'
+    fill_in 'biz_phone', :with => 'Test Phone'
+    fill_in 'biz_contact', :with => 'Test Contact'
+    fill_in 'biz_number', :with => 'Test Business Number'
     click_on 'Create Business'
     expect(page).to have_content 'Businesses'
   end
