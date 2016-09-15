@@ -27,14 +27,14 @@ class RequestsController < ApplicationController
     @business = Business.find(params[:business_id])
     @request = @business.requests.find(params[:id])
       if @request.update(request_params)
-        redirect_to business_path(@request.story)
+        redirect_to business_path(@request.business)
       else
         render :edit
       end
   end
 
   def destroy
-    @business.Business.find(params[:business_id])
+    @business = Business.find(params[:business_id])
     @request = Request.find(params[:id])
     @request.destroy
     redirect_to business_path(@request.business)
