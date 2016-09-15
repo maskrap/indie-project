@@ -2,22 +2,22 @@
 
 <%= form_for @business do |f| %>
   <%= f.label :Name %>
-  <%= f.text_field :biz_name, placeholder: 'Pok Pok' %>
+  <%= f.text_field :biz_name, placeholder: 'Name' %>
 
   <%= f.label :Type %>
-  <%= f.text_field :biz_type, placeholder: 'Restaurant'  %>
+  <%= f.text_field :biz_type, placeholder: 'Type'  %>
 
   <%= f.label :Address %>
-  <%= f.text_field :biz_address, placeholder: '123 Main St'  %>
+  <%= f.text_field :biz_address, placeholder: 'Address'  %>
 
   <%= f.label :'Phone number' %>
-  <%= f.text_field :biz_phone, placeholder: '555-555-5555'  %>
+  <%= f.text_field :biz_phone, placeholder: 'Phone number'  %>
 
   <%= f.label :Contact %>
-  <%= f.text_field :biz_contact, placeholder: 'Jane Doe'  %>
+  <%= f.text_field :biz_contact, placeholder: 'Contact'  %>
 
   <%= f.label :'Business Number' %>
-  <%= f.text_field :biz_number, placeholder: '#4'  %>
+  <%= f.text_field :biz_number, placeholder: 'Business number'  %>
 
   <%= f.submit %>
 <% end %>

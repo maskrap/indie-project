@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe "the add a business process" do
-  it "Adds a new business" do
+describe "the add a request process" do
+  it "Adds a new request" do
     visit businesses_path
     click_link 'Add a new business'
     fill_in 'Name', :with => 'Test Name'
@@ -11,12 +11,11 @@ describe "the add a business process" do
     fill_in 'Contact', :with => 'Test Contact'
     fill_in 'Business number', :with => 'Test Business Number'
     click_on 'Create Business'
-    expect(page).to have_content 'Businesses'
+    click_on 'Test Name'
+    click_on 'Make request'
+    fill_in 'Notes', :with => 'Test Request'
+    click_on 'Create Request'
+    expect(page).to have_content 'Test Request'
   end
 
-  it "gives an error when no title is entered" do
-    visit new_business_path
-    click_on 'Create Business'
-    expect(page).to have_content 'error'
-  end
 end
