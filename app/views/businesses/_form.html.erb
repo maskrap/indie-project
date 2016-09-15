@@ -1,23 +1,23 @@
 <%= render 'layouts/errors', :object => @business %>
 
 <%= form_for @business do |f| %>
-  <%= f.label :biz_name %>
-  <%= f.text_field :biz_name, placeholder: 'Name' %>
+  <%= f.label :Name %>
+  <%= f.text_field :biz_name, placeholder: 'Pok Pok' %>
 
-  <%= f.label :biz_type %>
-  <%= f.text_field :biz_type, placeholder: 'Type'  %>
+  <%= f.label :Type %>
+  <%= f.text_field :biz_type, placeholder: 'Restaurant'  %>
 
-  <%= f.label :biz_address %>
-  <%= f.text_field :biz_address, placeholder: 'Address'  %>
+  <%= f.label :Address %>
+  <%= f.text_field :biz_address, placeholder: '123 Main St'  %>
 
-  <%= f.label :biz_phone %>
-  <%= f.text_field :biz_phone, placeholder: 'Phone Number'  %>
+  <%= f.label :'Phone number' %>
+  <%= f.text_field :biz_phone, placeholder: '555-555-5555'  %>
 
-  <%= f.label :biz_contact %>
-  <%= f.text_field :biz_contact, placeholder: 'Contact'  %>
+  <%= f.label :Contact %>
+  <%= f.text_field :biz_contact, placeholder: 'Jane Doe'  %>
 
-  <%= f.label :biz_number %>
-  <%= f.text_field :biz_number, placeholder: 'Business Number'  %>
+  <%= f.label :'Business Number' %>
+  <%= f.text_field :biz_number, placeholder: '#4'  %>
 
   <%= f.submit %>
 <% end %>
