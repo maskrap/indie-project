@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe "the add a business process" do
   it "Adds a new business" do
+    user = FactoryGirl.create(:user)
+    login_as(user, :scope => :user, :run_callbacks => false)
     visit businesses_path
     click_link 'Add a new business'
     fill_in 'Name', :with => 'Test Name'
