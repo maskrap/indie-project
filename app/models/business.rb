@@ -1,5 +1,6 @@
 class Business < ActiveRecord::Base
   has_many :requests
+  belongs_to :user
   validates :biz_name, :presence => true
   validates :biz_type, :presence => true
   validates :biz_address, :presence => true
