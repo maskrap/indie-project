@@ -1,0 +1,2 @@
+module StaticHomeHelper
+end
