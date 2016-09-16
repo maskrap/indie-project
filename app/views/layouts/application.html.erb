@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>IndieProject</title>
+    <title>Independent Project</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Andada" rel="stylesheet">
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+        <li><%= link_to 'Edit Profile',edit_user_registration_path %></li>
+        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+
+        <% else %>
+        <li><%= link_to 'Login', new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </div>
   </head>
-
-  <body>
+<header>
+  <h1 class ="title text-center">Independent Project</h1>
+</header>
+  <body class="body text-left">
      <%= flash[:notice] %>
-     <div class="collapse navbar-collapse" id="navbar-collapse-1">
-         <ul class="nav navbar-nav navbar-right">
-             <% if current_user %>
-             <li><%= link_to 'Edit Profile',edit_user_registration_path %></li>
-             <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
-
-             <% else %>
-             <li><%= link_to 'Login', new_user_session_path %></li>
-             <% end %>
-         </ul>
-     </div>
     <%= yield %>
   </body>
 </html>
