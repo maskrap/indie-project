@@ -17,6 +17,9 @@ describe "the add a business process" do
   end
 
   it "gives an error when no title is entered" do
+    user = FactoryGirl.create(:user)
+    login_as(user, :scope => :user, :run_callbacks => false)
+
     visit new_business_path
     click_on 'Create Business'
     expect(page).to have_content 'error'
