@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   resources :businesses do
     resources :requests
   end
+  resources :users do
+    resources :businesses
+  end
 end
