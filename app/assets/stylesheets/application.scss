@@ -35,10 +35,10 @@ head {
 
 header {
   font-family: 'Andada', serif;
-  padding-top: 170px;
+  padding-top: 50px;
   height: 650px;
 
-  background: linear-gradient(#ffa949, transparent 90%),
+  background: linear-gradient(#F3FFBD, transparent 90%),
               linear-gradient(0deg, #fff, transparent),
               #ffa949 url('http://i.imgur.com/njxvrhD.jpg') no-repeat center;
 
@@ -69,9 +69,15 @@ body {
   margin: 5% auto;
 }
 
-.nav, .title {
+.nav {
   margin-top: 0;
   width: 100%;
+  display: block;
+}
+
+.title {
+  margin-left: auto;
+  margin-right: auto;
   display: block;
 }
 
