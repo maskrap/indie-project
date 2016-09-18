@@ -6,15 +6,20 @@
 // End Web Fonts
 
 // Media Queries
-@media (max-width: 960px) {
-  // body {
-  //   background: royalblue;
-  // }
-  // p {
-  //   color: white;
-  // }
+@media (min-width: 769px) {
+
+  .wrap {
+    min-height: calc(100vh - 90px);
+  }
+
+  .wrapper {
+    width: 70%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
 }
-//
+
+// End Media Queries
 
 
 
@@ -51,6 +56,20 @@ body {
 .title {
   color: white;
   font-size: 1.625em;
+}
+
+.wrapper {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.main-footer {
+  text-align: center;
+  margin: 5% auto;
+}
+
+.nav, .title {
+  margin-top: 0;
 }
 
 // End Landing Page

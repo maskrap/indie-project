@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Independent Project</title>
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Andada" rel="stylesheet">
-    <div class="collapse navbar-collapse" id="navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <% if current_user %>
-        <li><%= link_to 'Edit Profile',edit_user_registration_path %></li>
-        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+  <div class="wrap">
+    <head>
+      <title>Independent Project</title>
+      <%= csrf_meta_tags %>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <link href="https://fonts.googleapis.com/css?family=Andada" rel="stylesheet">
+      <div class="collapse navbar-collapse" id="navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <% if current_user %>
+          <li><%= link_to 'Edit Profile',edit_user_registration_path %></li>
+          <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
 
-        <% else %>
-        <li><%= link_to 'Login', new_user_session_path %></li>
-        <% end %>
-      </ul>
+          <% else %>
+          <li><%= link_to 'Login', new_user_session_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </head>
+    <header>
+      <h1 class ="title text-center">Independent Project</h1>
+    </header>
+    <div class="wrapper">
+      <body class="body text-left">
+        <%= flash[:notice] %>
+        <%= yield %>
+      </body>
     </div>
-  </head>
-<header>
-  <h1 class ="title text-center">Independent Project</h1>
-</header>
-  <body class="body text-left">
-     <%= flash[:notice] %>
-    <%= yield %>
-  </body>
+  </div>
+  
+  <footer class="main-footer">
+    <span>&copy;2016 Sam Park</span>
+  </footer>
 </html>
