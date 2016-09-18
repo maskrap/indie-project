@@ -7,7 +7,7 @@
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
       <link href="https://fonts.googleapis.com/css?family=Andada" rel="stylesheet">
-      <div class="collapse navbar-collapse" id="navbar-collapse-1">
+      <div >
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
           <li><%= link_to 'Edit Profile',edit_user_registration_path %></li>
@@ -29,7 +29,7 @@
       </body>
     </div>
   </div>
-  
+
   <footer class="main-footer">
     <span>&copy;2016 Sam Park</span>
   </footer>
