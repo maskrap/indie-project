@@ -3,7 +3,8 @@ class StaticHomeController < ApplicationController
 
   def home
   end
-  
+
   def about
+    render template: "static_home/about.html.erb", layout: "application"
   end
 end
