@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 describe "the edit a business process" do
-  it "edits a business" do
+  it "edits a business", js: true do
     user = FactoryGirl.create(:user)
     login_as(user, :scope => :user, :run_callbacks => false)
-    
+
     business = Business.create({:biz_name => "Test Name", :biz_type => "Test Type", :biz_address => "Test Address", :biz_phone => "Test Phone", :biz_contact => "Test Contact", :biz_number => "Test Number"})
     visit business_path(business)
     click_link "Edit"

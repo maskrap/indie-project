@@ -11,10 +11,6 @@ class BusinessesController < ApplicationController
 
   def new
     @business = Business.new
-    respond_to do |format|
-      format.html { render :new }
-      format.js
-    end
   end
 
   def create
@@ -29,10 +25,6 @@ class BusinessesController < ApplicationController
 
   def edit
     @business = Business.find(params[:id])
-    respond_to do |format|
-      format.html { render :edit }
-      format.js
-    end
   end
 
   def update
