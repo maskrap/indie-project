@@ -1,6 +1,6 @@
 class BusinessesController < ApplicationController
   before_filter :authenticate_user!
-  
+
   def index
     @businesses = Business.all
   end
@@ -11,6 +11,10 @@ class BusinessesController < ApplicationController
 
   def new
     @business = Business.new
+    respond_to do |format|
+      format.html { render :new }
+      format.js
+    end
   end
 
   def create

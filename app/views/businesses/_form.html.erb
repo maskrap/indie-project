@@ -1,6 +1,6 @@
 <%= render 'layouts/errors', :object => @business %>
 
-<%= form_for @business do |f| %>
+<%= form_for @business, remote: true do |f| %>
   <%= f.label :Name %>
   <%= f.text_field :biz_name, placeholder: 'Name' %>
 

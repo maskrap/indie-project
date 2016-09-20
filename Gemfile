@@ -43,8 +43,10 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'database_cleaner'
   gem 'simplecov', require: false
-end
+  gem 'poltergeist'
+  gem 'phantomjs', :require => 'phantomjs/poltergeist'end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
