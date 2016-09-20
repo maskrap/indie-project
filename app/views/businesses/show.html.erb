@@ -7,7 +7,7 @@
 <h3><%= @business.biz_contact %></h3>
 <h3><%= @business.biz_number %></h3>
 
-<%= link_to "Make request", new_business_request_path(@business) %>
+<%= link_to "Make request", new_business_request_path(@business), id: "new_request_link", remote: true %>
 
 <% if @business.requests.any? %>
   <h4>Requests made:</h4>
@@ -16,7 +16,7 @@
     <% @business.requests.each do |request| %>
       <li>
         <%= request.interval %>
-        <%= link_to "Edit", edit_business_request_path(@business, request) %> |
+        <%= link_to "Edit", edit_business_request_path(@business, request), id: "edit_request_link", remote: true %> |
         <%= link_to "Delete", business_request_path(@business, request), :data => {:confirm => "You sure?", :method => "delete"} %>
       </li>
     <% end %>
