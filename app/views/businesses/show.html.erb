@@ -30,7 +30,7 @@
 <hr>
 
 <p>
-  <%= link_to "Edit", edit_business_path(@business) %>
+  <%= link_to "Edit", edit_business_path(@business), id: "edit_business_link", remote: true %>
 </p>
 <p>
   <%= link_to "Delete", business_path(@business), :data => {:confirm => "Are you sure?", :method => "delete"} %>
