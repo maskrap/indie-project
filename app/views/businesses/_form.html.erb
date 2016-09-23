@@ -1,23 +1,23 @@
 <%= render 'layouts/errors', :object => @business %>
 
 <%= form_for @business, remote: true do |f| %>
-  <%= f.label :Name %>
-  <%= f.text_field :biz_name, placeholder: 'Name' %>
+  <%= f.label :Name, class: "newbiz col-md-5" %>
+  <%= f.text_field :biz_name, placeholder: 'Name', class: "form-control" %>
 
-  <%= f.label :Type %>
-  <%= f.text_field :biz_type, placeholder: 'Type'  %>
+  <%= f.label :Type, class: "newbiz col-md-5" %>
+  <%= f.text_field :biz_type, placeholder: 'Type', class: "form-control"  %>
 
-  <%= f.label :Address %>
-  <%= f.text_field :biz_address, placeholder: 'Address'  %>
+  <%= f.label :Address, class: "newbiz col-md-5 " %>
+  <%= f.text_field :biz_address, placeholder: 'Address', class: "form-control" %>
 
-  <%= f.label :'Phone number' %>
-  <%= f.text_field :biz_phone, placeholder: 'Phone number'  %>
+  <%= f.label :'Phone number', class: "newbiz col-md-5" %>
+  <%= f.text_field :biz_phone, placeholder: 'Phone number', class: "form-control"  %>
 
-  <%= f.label :Contact %>
-  <%= f.text_field :biz_contact, placeholder: 'Contact'  %>
+  <%= f.label :Contact, class: "newbiz col-md-5" %>
+  <%= f.text_field :biz_contact, placeholder: 'Contact', class: "form-control"  %>
 
-  <%= f.label :'Business Number' %>
-  <%= f.text_field :biz_number, placeholder: 'Business number'  %>
+  <%= f.label :'Business Number', class: "newbiz col-md-5" %>
+  <%= f.text_field :biz_number, placeholder: 'Business number', class: "form-control"  %>
 
   <%= f.submit %>
 <% end %>
