@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <div class="wrap">
-    <head>
-      <title>Independent Project</title>
-      <%= csrf_meta_tags %>
-      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-      <link href="https://fonts.googleapis.com/css?family=Andada" rel="stylesheet">
-      <div >
-        <ul class="nav navbar-nav navbar-right">
-          <% if current_user %>
-          <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
-          <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
-          <li><%= link_to 'About', {}, :name => 'about' %></li>
-          <% else %>
-          <li><%= link_to 'Login', new_user_session_path %></li>
-          <li><%= link_to 'About', :name => 'static_home/about.html.erb' %></li>
-          <% end %>
-        </ul>
-      </div>
-    </head>
-    <header>
-      <img class="title text-center" src="http://i.imgur.com/I7OZcJG.png" alt="logo" />
-    </header>
-    <div class="wrapper">
-      <body class="body text-left">
+  <head>
+    <title>Independent Project</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Andada" rel="stylesheet">
+  </head>
+  <body class="body text-left">
+    <div>
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+        <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to 'About', {}, :name => 'about' %></li>
+        <% else %>
+        <li><%= link_to 'Login', new_user_session_path %></li>
+        <li><%= link_to 'About', :name => 'static_home/about.html.erb' %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="wrap">
+      <header>
+        <img class="title text-center" src="http://i.imgur.com/I7OZcJG.png" alt="logo" />
+      </header>
+      <div class="wrapper">
         <%= flash[:notice] %>
         <%= yield %>
-      </body>
+      </div>
     </div>
-  </div>
-
-  <footer class="main-footer">
-    <span>&copy;2016 Sam Park</span>
-  </footer>
+    <footer class="main-footer">
+      <span>&copy;2016 Sam Park</span>
+    </footer>
+  </body>
 </html>
