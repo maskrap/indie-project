@@ -2,8 +2,8 @@ class PlacesController < ApplicationController
 
   def index
     @places = Place.all
-    @place_pages = Place.order(:name).page params[:page]
-    @markers = Place.markefy(@place_pages)
+    # @place_pages = Place.order(:name).page params[:page]
+    # @markers = Place.markefy(@place_pages)
     @image = ''
   end
 

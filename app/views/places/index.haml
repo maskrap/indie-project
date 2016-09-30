@@ -1,0 +1,49 @@
+-# #messages
+-# - @place_pages.each do |place|
+-#   %h1= link_to place.name, place_path(place)
+
+%div{ style: 'width 800px;'}
+#map{style: 'width: 800px; height: 800px;'}
+
+:javascript
+  var markers = #{raw @markers}
+
+  -# var turn_red = function(){
+  -#   $('#messages').append("<h1>HEMAN!! YEAH!!!</h1>");
+  -#   $('div').scrollTop();
+  -# }
+
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat:  41.390205, lng: 2.154007},
+      zoom: 2,
+      styles :
+      [{"elementType":"geometry","stylers":[{"hue":"#ff4400"},{"saturation":-68},{"lightness":-4},{"gamma":0.72}]},{"featureType":"road","elementType":"labels.icon"},{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"hue":"#0077ff"},{"gamma":3.1}]},{"featureType":"water","stylers":[{"hue":"#00ccff"},{"gamma":0.44},{"saturation":-33}]},{"featureType":"poi.park","stylers":[{"hue":"#44ff00"},{"saturation":-23}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"hue":"#007fff"},{"gamma":0.77},{"saturation":65},{"lightness":99}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"gamma":0.11},{"weight":5.6},{"saturation":99},{"hue":"#0091ff"},{"lightness":-86}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"lightness":-48},{"hue":"#ff5e00"},{"gamma":1.2},{"saturation":-23}]},{"featureType":"transit","elementType":"labels.text.stroke","stylers":[{"saturation":-64},{"hue":"#ff9100"},{"lightness":16},{"gamma":0.47},{"weight":2.7}]}]
+    });
+
+    var contentString = '<div><img src="http://media3.giphy.com/media/M7gtacN7aPNsc/giphy.gif" alt="this is gif"</div>'
+
+
+    for( i = 0; i < markers.length; i++ ) {
+
+      var infowindow = new google.maps.InfoWindow({
+          content: contentString
+      });
+
+      var marker = new google.maps.Marker({
+        position: {lat: markers[i][1], lng: markers[i][2]},
+        map: map,
+        animation: google.maps.Animation.BOUNCE,
+        title: markers[i][0],
+        windowContent: '<h1>' + markers[i][0] + '#{ image_tag(@image) }' + '</h1>'
+      });
+
+      marker.addListener('click', function() {
+        infowindow.setContent(this.windowContent);
+        infowindow.open(map, this);
+        -# turn_red();
+      });
+
+    }
+
+  }
