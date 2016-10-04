@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PDX Compost</title>
+    <title>Compost PDX</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -22,7 +22,9 @@
     </div>
     <div class="wrap">
       <header>
-        <img class="title text-center" src="http://i.imgur.com/I7OZcJG.png" alt="logo" />
+        <a href=<%= root_path %>>
+          <img class="title text-center" src="http://i.imgur.com/I7OZcJG.png" alt="logo" />
+        </a>
       </header>
       <div class="wrapper">
         <%= flash[:notice] %>
